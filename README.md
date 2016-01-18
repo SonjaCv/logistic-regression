@@ -6,4 +6,4 @@ The dataset examples have ten possible class labels. The class labels are marked
 
 Because we have 10 classes theta will be matrix of paramethers for each class.
 
-After we have learned paramethers theta we can predict the class label for unlabeled data.
+After we have learned parameters theta we can predict the class label for unlabeled data.
