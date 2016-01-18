@@ -17,4 +17,6 @@ for c = 1:num_classes,
   all_theta(:,c) = theta;
 end;
 
-pred = predict(theta, X);
+XTest = load('TestData.txt');
+% With the learned paramether theta predict the y values for some unlabeled data 
+pred = predict(theta, XTest);
