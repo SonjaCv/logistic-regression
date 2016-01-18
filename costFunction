@@ -1,0 +1,21 @@
+function [J, grad] = costFunction(theta, X, y)
+
+m = length(y); % number of training examples
+J = 0;
+grad = zeros(size(theta)); %gradients
+
+sumOfGradients = zeros(size(theta));
+theta_column = size(theta,2);
+
+for i=1:m,
+for j=1:theta_column,
+h = 1 / (1 + e^-(theta(:,j)'*X(i,:)'));
+sumOfGradients(:,j) = sumOfGradients(:,j)+((h - y(i,1)).* X(i,:))';
+J += (-y(i) * log(h)) - ((1 - y(i)) * log(1 - h));
+end;
+end;
+
+J = J / m;
+grad = (1/m).*sumOfGradients;
+
+end;
