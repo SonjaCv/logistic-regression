@@ -1,0 +1,25 @@
+function p = predict(theta, X)
+% Predict what label a record i will have. 
+
+
+m = size(X, 1); % Number of training examples
+
+p = zeros(m, 1);
+
+classLabels = size(theta,2)
+probabilities = zeros(m,classLabels);
+
+
+for i=1:m
+for j=1:classLabels
+sig = 1 / (1 + e^(-(X(i, :)*theta(:,j))));  %Sigmoid function for sum of products of theta and X
+probabilities(i,j) = sig;
+end;
+end;
+
+% in p(i) set the index of the value in probabilities that has the highest value 
+for i=1:m
+p(i) = find(probabilities(i,:) == max(probabilities(i,:)));
+end
+
+end;
