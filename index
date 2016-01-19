@@ -1,6 +1,6 @@
 
-X = load('DataSet.txt'); %Load the dataset
-y = load('yVal.txt'); %Load the class labels
+X = load('_DataSet.txt'); %Load the dataset
+y = load('_yVal.txt'); %Load the class labels
 
 [m,n] = size(X) % m = num of examples; n = num of features
 
